@@ -23,9 +23,10 @@ const mealSchema = mongoose.Schema({
         trim: true
     },
     user: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"users",
         required: true
     }
-});
+}, {timestamps: true});
 
 export default mongoose.models.meals || mongoose.model("meals", mealSchema);

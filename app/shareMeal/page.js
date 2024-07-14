@@ -11,7 +11,8 @@ export default function ShareMeal(){
     <main className="max-w-[1200px] mr-auto text-white p-[20px] py-[40px]">
         
         <div className="text-[40px] text-white font-bold mb-[50px]">
-            <h1 className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent">
+            <h1 
+            className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent leading-10">
                 SHARE YOUR MEAL
             </h1>
         </div>
@@ -40,7 +41,7 @@ export default function ShareMeal(){
             />
             </div>
             
-            <div className="px-[40px]">
+            <div className="sm:px-[40px] px-3">
                 <MealImageShare />
             </div>
 

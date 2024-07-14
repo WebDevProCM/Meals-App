@@ -1,25 +1,34 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IoReceipt } from "react-icons/io5";
 import mealImg from "@/public/images/curry.jpg";
-import Link from "next/link";
 import BackBtn from "@/components/BackBtn";
+import { getMeal } from "@/lib/meal";
+import { notFound } from "next/navigation";
 
-export default function MealReceipe(){
-    let insructions = `
-    1. Prepare the tomatoes:
-    Slice fresh tomatoes and arrange them on a plate.
+export default async function MealReceipe({params}){
+    // let insructions = `
+    // 1. Prepare the tomatoes:
+    // Slice fresh tomatoes and arrange them on a plate.
 
-    2. Add herbs and seasoning:
-    Sprinkle chopped basil, salt, and pepper over the tomatoes.
+    // 2. Add herbs and seasoning:
+    // Sprinkle chopped basil, salt, and pepper over the tomatoes.
 
-    3. Dress the salad:
-    Drizzle with olive oil and balsamic vinegar.
+    // 3. Dress the salad:
+    // Drizzle with olive oil and balsamic vinegar.
 
-    4. Serve:
-    Enjoy this simple, flavorful salad as a side dish or light meal.
-    `
+    // 4. Serve:
+    // Enjoy this simple, flavorful salad as a side dish or light meal.
+    // `
 
-    insructions = insructions.replace(/\n/g, "<br>");
+    // insructions = insructions.replace(/\n/g, "<br>");
+
+    let meal = await getMeal(params.mealSlug);
+    if(!meal){
+        return notFound();
+    }
+
+    meal.instructions = meal.instructions.replace(/\n/g, "<br>");
 
     return(
         <main className="max-w-[1400px] py-[60px] px-[20px] mx-auto">
@@ -41,11 +50,16 @@ export default function MealReceipe(){
                     <p 
                     className="font-bold text-[40px] uppercase max-w-[400px] leading-[45px]"
                     >
-                        Squishy Cheesy Pasta
+                        {meal.title}
                     </p>
                     <p className="text-[25px] font-bold text-gray-400 max-w-[500px]">
-                        with the mealy cheese, eater receives joyful feeling</p>
-                    <Link href=""> <p className="text-orange-500 font-bold underline">Share by John Smith</p> </Link>
+                        {meal.summary}
+                    </p>
+                    <Link href=""> 
+                        <p className="text-orange-500 font-bold underline">
+                            Share by {meal.user}
+                        </p> 
+                    </Link>
                 </div>
             </div>
 
@@ -56,7 +70,7 @@ export default function MealReceipe(){
                 <p 
                 className="text-xl" 
                 dangerouslySetInnerHTML={{
-                    __html: insructions
+                    __html: meal.instructions
                 }}
                 >
 

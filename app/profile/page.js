@@ -3,18 +3,11 @@ import coverImg from "@/public/images/cover.png"
 import profileImg from "@/public/images/image1.jpg"
 import Link from "next/link";
 import MealPost from "@/components/Meal/MealPost";
+import { getMeals } from "@/lib/meal";
 
-export default function ProfilePage(){
+export default async function ProfilePage(){
+    const meals = await getMeals();
     return(
-    //     <div className="profile-section">
-    //     <img src={coverImg.src} alt="Cover Photo" className="h-64 w-full object-cover" />
-    //     <div className="flex justify-center mt-[-100px]">
-    //       <img src={profileImg.src} alt="Profile Picture" className="rounded-full w-32 h-32 border-4 border-white" />
-    //     </div>
-    //     <div className="text-center mt-4">
-    //       <h3>Jhon Smith</h3>
-    //     </div>
-    //   </div>
         <main className="max-w-[1500px] mx-auto px-[20px]">
             <div className="mx-auto text-center">
                 <div className="max-w-[851px] sm:h-[300px] h-[200px] object-cover relative mx-auto">
@@ -41,9 +34,11 @@ export default function ProfilePage(){
                 </h1>
 
                 <div className="flex justify-start items-center flex-wrap">
-                    <MealPost />
-                    <MealPost />
-                    <MealPost />
+                    {meals.map((meal) =>{
+                        return(
+                            <MealPost key={meal._id} meal={meal} editBtn="true"/>
+                        )
+                    })}
                 </div>
             </div>
 
