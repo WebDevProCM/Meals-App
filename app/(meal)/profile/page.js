@@ -20,11 +20,11 @@ export default async function ProfilePage(){
                     <div className="sm:w-[150px] sm:h-[150px] w-[100px] h-[100px] relative">
                         <Image className="rounded-full" src={profileImg} alt="profile-image" fill />
                     </div>
-                    <div className="flex flex-col justify-center items-start mt-[25px] text-white sm:text-[12px] text-[10px] font-bold">
+                    {/* <div className="flex flex-col justify-center items-start mt-[25px] text-white sm:text-[12px] text-[10px] font-bold">
                         <Link href="">www.youtube.com</Link>
                         <Link href="">www.youtube.com</Link>
                         <Link href="">www.youtube.com</Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -34,9 +34,12 @@ export default async function ProfilePage(){
                 </h1>
 
                 <div className="flex justify-start items-center flex-wrap">
-                    {meals.map((meal) =>{
+                    {meals.length === 0?
+                    <p className="text-center font-bold text-[30px] mt-5">No Meals Posts shared by you</p>
+                    :
+                    meals.map((meal) =>{
                         return(
-                            <MealPost key={meal._id} meal={meal} editBtn="true"/>
+                            <MealPost key={meal._id} meal={meal} editBtn={true}/>
                         )
                     })}
                 </div>

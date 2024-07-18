@@ -22,10 +22,16 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        fairplay: ['var(--font-playfair-display)'],
+        montserrat: ['var(--font-montserrat)'],
+        pacifico: ['var(--font-pacifico)']
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'right-banner': "url('/images/right-login.webp')",
       },
       colors:{
         "glass": "rgba(255,255,255,0.1)",

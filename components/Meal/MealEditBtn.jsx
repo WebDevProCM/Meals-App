@@ -28,7 +28,7 @@ export function MealEditBtn({meal}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button variant="outline"><FaEdit /></button>
+        <button><FaEdit /></button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

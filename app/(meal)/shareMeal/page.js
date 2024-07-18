@@ -12,7 +12,8 @@ export default function ShareMeal(){
         
         <div className="text-[40px] text-white font-bold mb-[50px]">
             <h1 
-            className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent leading-10">
+            className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent 
+            leading-10 ">
                 SHARE YOUR MEAL
             </h1>
         </div>

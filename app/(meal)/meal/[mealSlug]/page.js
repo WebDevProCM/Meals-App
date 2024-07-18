@@ -7,25 +7,16 @@ import { getMeal } from "@/lib/meal";
 import { notFound } from "next/navigation";
 
 export default async function MealReceipe({params}){
-    // let insructions = `
-    // 1. Prepare the tomatoes:
-    // Slice fresh tomatoes and arrange them on a plate.
-
-    // 2. Add herbs and seasoning:
-    // Sprinkle chopped basil, salt, and pepper over the tomatoes.
-
-    // 3. Dress the salad:
-    // Drizzle with olive oil and balsamic vinegar.
-
-    // 4. Serve:
-    // Enjoy this simple, flavorful salad as a side dish or light meal.
-    // `
-
-    // insructions = insructions.replace(/\n/g, "<br>");
-
-    let meal = await getMeal(params.mealSlug);
-    if(!meal){
+    let mealObject = await getMeal(params.mealSlug);
+    if(!mealObject){
         return notFound();
+    }
+    let {_id, title, summary, instructions, image, user} = mealObject;
+    _id = _id.toHexString();
+    
+    const meal = {
+        _id, title, summary, instructions, image,
+        user: {_id: user._id.toHexString(), name:user.name, email:user.email, image:user.image}
     }
 
     meal.instructions = meal.instructions.replace(/\n/g, "<br>");
@@ -52,12 +43,12 @@ export default async function MealReceipe({params}){
                     >
                         {meal.title}
                     </p>
-                    <p className="text-[25px] font-bold text-gray-400 max-w-[500px]">
+                    <p className="text-[25px] font-bold text-gray-400 max-w-[500px] font-montserrat">
                         {meal.summary}
                     </p>
                     <Link href=""> 
-                        <p className="text-orange-500 font-bold underline">
-                            Share by {meal.user}
+                        <p className="text-orange-500 font-bold underline font-pacifico">
+                            Share by {meal.user.name}
                         </p> 
                     </Link>
                 </div>

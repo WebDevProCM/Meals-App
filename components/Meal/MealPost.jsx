@@ -8,20 +8,31 @@ import curry from "@/public/images/curry.jpg"
 import Link from 'next/link';
 import { MealEditBtn } from './mealEditBtn';
 import { MealDeleteBtn } from './MealDeleteBtn';
+import PostLikeBtn from './PostLikeBtn';
+import { toggleLikeStatus } from '@/lib/actions';
 
 function MealPost({meal, editBtn}) {
   const createdLocal = moment.utc(meal.createdAt).local();
   const createdDate = createdLocal.format("YYYY-MM-DD");
   const createdTime = createdLocal.format("HH.mm");
-  let {_id, title, summary, instructions, image, user} = meal;
+  let {_id, title, summary, instructions, image, user, likes, liked} = meal;
   _id = _id.toHexString();
+
   const objectMeal = {
     _id,
     title,
     summary,
     instructions,
     image,
-    user
+    likes,
+    liked,
+    user: {
+      _id: user._id.toHexString(),
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      image: user.image
+    }
   }
 
   return (
@@ -33,7 +44,7 @@ function MealPost({meal, editBtn}) {
               <Image className='rounded-full' src={userImg} alt='user-picture' fill/>
             </div>
             <div className='flex flex-col justify-center items-start'>
-              <p className='uppercase'>{meal.user.name}</p>
+              <p className='uppercase font-montserrat font-bold'>{meal.user.name}</p>
               <p className='text-[9px]'>
                 {createdDate} . {createdTime}
               </p>
@@ -60,14 +71,18 @@ function MealPost({meal, editBtn}) {
               View Receipe
             </Link>
           </button>
-          <div className='flex justify-center items-center w-full'>
-            <button className='flex justify-center items-center grow py-[10px] bg-glass backdrop-blur-[30px] hover:bg-glassHover'>
-              <AiFillLike />Like
-            </button>
-            <button className='flex justify-center items-center grow py-[10px] bg-glass backdrop-blur-[30px] hover:bg-glassHover'>
-              <AiFillDislike />Dislike
-            </button>
-          </div>
+
+          {/* <div className='flex justify-center items-center w-full'>
+            
+          <button className='flex justify-center items-center grow py-[10px] bg-glass backdrop-blur-[30px] hover:bg-glassHover'>
+            <AiFillLike />Like
+          </button>
+          <button className='flex justify-center items-center grow py-[10px] bg-glass backdrop-blur-[30px] hover:bg-glassHover'>
+            <AiFillDislike />Dislike
+          </button>
+
+          </div> */}
+          <PostLikeBtn meal={objectMeal}/>
         </div>
     </div>
   )

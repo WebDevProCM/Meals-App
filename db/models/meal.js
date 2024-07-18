@@ -26,6 +26,12 @@ const mealSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:"users",
         required: true
+    },
+    likes: {
+        type:[{
+            type: String
+        }],
+        default: []
     }
 }, {timestamps: true});
 

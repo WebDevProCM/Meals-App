@@ -20,9 +20,9 @@ export function MealDeleteBtn({mealId}) {
   const clickHanlder = async ()=>{
     const result = await removeMealAction(mealId);
     if(result.error){
-      console.log(result);
       return toast.error(result.error);
     }
+    return toast.warn("Meal Post Removed!");
   }
 
   return (
