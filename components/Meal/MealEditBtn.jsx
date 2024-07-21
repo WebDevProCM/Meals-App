@@ -1,7 +1,6 @@
 "use client"
 
 import {useFormState} from "react-dom"
-import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -17,12 +16,13 @@ import { Textarea } from "../ui/textarea";
 import { Label } from "@/components/ui/label"
 import { updateMealAction } from "@/lib/actions";
 import { toast } from "react-toastify";
+import { MealUpdateBtn } from "./MealUpdateBtn";
 
 export function MealEditBtn({meal}) {
-  const [formState, formAction] = useFormState(updateMealAction, {message: null});
+  const [formState, formAction] = useFormState(updateMealAction, null);
 
-  if(formState.message){
-    return toast.error(formState.message.error);
+  if(formState?.error){
+    return toast.error(formState?.error);
   }
 
   return (
@@ -51,6 +51,7 @@ export function MealEditBtn({meal}) {
               defaultValue={meal.title}
               className="col-span-3"
               />
+            {formState?.errors?.title && <p className="text-red-500 col-span-3">{formState?.errors?.title}</p>}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="summary" className="text-right">
@@ -62,19 +63,23 @@ export function MealEditBtn({meal}) {
               defaultValue={meal.summary}
               className="col-span-3"
               />
+            {formState?.errors?.summary && <p className="text-red-500 col-span-3">{formState?.errors?.summary}</p>}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="instructions">Instructions</Label>
             <Textarea className="col-span-4" defaultValue={meal.instructions} id="instructions" name="instructions"/>
+            {formState?.errors?.instructions && <p className="text-red-500 col-span-3">{formState?.errors?.instructions}</p>}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="image">Upload New Image</Label>
             <Input className="col-span-3" id="image" type="file" name="image" />
+            {formState?.errors?.image && <p className="text-red-500 col-span-3">{formState?.errors?.image}</p>}
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
-          {formState.message && <p>{formState.message.error}</p>}
+          <MealUpdateBtn />
+          {formState?.error?._id && <p className="text-red-500">{formState?.error?._id}</p>}
+          {formState?.error && <p className="text-red-500">{formState?.error}</p>}
         </DialogFooter>
         </form>
       </DialogContent>

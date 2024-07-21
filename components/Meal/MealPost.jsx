@@ -4,7 +4,7 @@ import { GiCook } from "react-icons/gi";
 import { AiFillLike } from "react-icons/ai";
 import { AiFillDislike } from "react-icons/ai";
 import userImg from "@/public/images/image1.jpg"
-import curry from "@/public/images/curry.jpg"
+import curry from "@/public/images/meal bg 2.jpg"
 import Link from 'next/link';
 import { MealEditBtn } from './mealEditBtn';
 import { MealDeleteBtn } from './MealDeleteBtn';

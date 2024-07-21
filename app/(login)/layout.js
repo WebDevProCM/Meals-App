@@ -1,5 +1,25 @@
 import "../globals.css";
+import { Inter, Playfair_Display, Montserrat, Pacifico } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider"
+
+const playfair_display = Playfair_Display({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-playfair-display'
+})
+
+const montserrat= Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat'
+})
+
+const pacifico= Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-pacifico'
+})
 
 export const metadata = {
   title: 'Next.js',
@@ -8,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair_display.variable} ${montserrat.variable} ${pacifico.variable}`}>
       <body>
         <ThemeProvider
             attribute="class"

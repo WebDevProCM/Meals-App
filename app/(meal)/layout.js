@@ -30,9 +30,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
-    <html lang="en" className={`${playfair_display.variable} ${montserrat.variable} ${pacifico.variable}`}>
-      <body className={playfair_display.className}>
+    <html lang="en" className={`${playfair_display.variable} ${montserrat.variable} ${pacifico.variable} ${playfair_display.className}`}>
+      <body className="bg-black">
         <nav className="w-full">
           <Navbar />
         </nav>

@@ -36,7 +36,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:flex gap-4 shrink-0">
 
-            <Link href="/">
+            <Link href="/meal">
             <button 
             className="relative flex h-[50px] sm:w-40 w-[60px] items-center justify-center overflow-hidden 
             bg-gray-600 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0
@@ -70,7 +70,7 @@ export default function Navbar() {
                         <Image className="rounded-full" src={profileImg} alt="user-image" fill/>
                 </div>
             </Link>
-            <Link href="/">
+            <Link href="/meal">
                 <button 
                 className="relative flex h-[50px] w-[300px] items-center justify-center overflow-hidden 
                 bg-gray-600 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0

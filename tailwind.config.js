@@ -32,6 +32,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'right-banner': "url('/images/right-login.webp')",
+        'left-banner': "url('/images/loginPageimg.jpg')",
+        'meal-bg': "url('/images/meal-bg.jpg')",
+        'meal-bg-1': "url('/images/meal bg 2.jpg')",
+        'meal-bg-sm': "url('/images/meal bg 2 sm.jpg')"
       },
       colors:{
         "glass": "rgba(255,255,255,0.1)",

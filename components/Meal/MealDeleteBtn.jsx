@@ -11,18 +11,17 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
-  import { Button } from "@/components/ui/button"
 import { removeMealAction } from "@/lib/actions";
   import { MdDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
   
 export function MealDeleteBtn({mealId}) {
-  const clickHanlder = async ()=>{
+  const clickHanlder = async (event)=>{
     const result = await removeMealAction(mealId);
-    if(result.error){
-      return toast.error(result.error);
+    if(result?.error){
+      return toast.error(result?.error);
     }
-    return toast.warn("Meal Post Removed!");
+    return toast.warn("Please Wait! Meal Post Removing...!");
   }
 
   return (
