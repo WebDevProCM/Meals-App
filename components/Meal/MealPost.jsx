@@ -1,22 +1,20 @@
 import Image from 'next/image'
 import moment from 'moment';
 import { GiCook } from "react-icons/gi";
-import { AiFillLike } from "react-icons/ai";
-import { AiFillDislike } from "react-icons/ai";
 import userImg from "@/public/images/image1.jpg"
 import curry from "@/public/images/meal bg 2.jpg"
 import Link from 'next/link';
 import { MealEditBtn } from './mealEditBtn';
 import { MealDeleteBtn } from './MealDeleteBtn';
 import PostLikeBtn from './PostLikeBtn';
-import { toggleLikeStatus } from '@/lib/actions';
 
 function MealPost({meal, editBtn}) {
   const createdLocal = moment.utc(meal.createdAt).local();
   const createdDate = createdLocal.format("YYYY-MM-DD");
   const createdTime = createdLocal.format("HH.mm");
   let {_id, title, summary, instructions, image, user, likes, liked} = meal;
-  _id = _id.toHexString();
+  _id = typeof _id === 'string' ? _id : _id.toHexString();
+  user._id = typeof user._id === 'string' ? user._id : user._id.toHexString();
 
   const objectMeal = {
     _id,
@@ -27,13 +25,14 @@ function MealPost({meal, editBtn}) {
     likes,
     liked,
     user: {
-      _id: user._id.toHexString(),
+      _id: user._id,
       name: user.name,
       email: user.email,
-      password: user.password,
       image: user.image
     }
   }
+
+  console.log(objectMeal.liked);
 
   return (
     <div className='rounded-[15px] max-w-[400px] mx-auto text-[#ddd6cb] bg-grad

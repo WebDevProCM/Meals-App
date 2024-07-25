@@ -1,6 +1,7 @@
-import "../globals.css";
-import { Inter, Playfair_Display, Montserrat, Pacifico } from "next/font/google";
+import "./globals.css"
+import { Playfair_Display, Montserrat, Pacifico } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider"
+import { Toaster } from "react-hot-toast";
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           >
         {children}
         </ThemeProvider>
+        <Toaster position="top-right"/>
         </body>
     </html>
   )

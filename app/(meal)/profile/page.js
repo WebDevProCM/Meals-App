@@ -1,12 +1,17 @@
 import Image from "next/image";
 import coverImg from "@/public/images/cover.png"
 import profileImg from "@/public/images/image1.jpg"
-import Link from "next/link";
 import MealPost from "@/components/Meal/MealPost";
-import { getMeals } from "@/lib/meal";
+import { getCurrentUserMeals } from "@/lib/actions";
+import { verifySession } from "@/lib/session";
+import { redirect } from "next/navigation";
 
 export default async function ProfilePage(){
-    const meals = await getMeals();
+    const session = await verifySession();
+    if(!session){
+        redirect("/");
+    }
+    const meals = await getCurrentUserMeals();
     return(
         <main className="max-w-[1500px] mx-auto px-[20px]">
             <div className="mx-auto text-center">
@@ -35,7 +40,7 @@ export default async function ProfilePage(){
 
                 <div className="flex justify-start items-center flex-wrap">
                     {meals.length === 0?
-                    <p className="text-center font-bold text-[30px] mt-5">No Meals Posts shared by you</p>
+                    <p className="mx-auto text-gray-200 font-bold text-[30px] mt-5">No Meals Posts shared by you</p>
                     :
                     meals.map((meal) =>{
                         return(

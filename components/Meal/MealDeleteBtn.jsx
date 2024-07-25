@@ -12,8 +12,8 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
 import { removeMealAction } from "@/lib/actions";
-  import { MdDeleteForever } from "react-icons/md";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+import { MdDeleteForever } from "react-icons/md";
   
 export function MealDeleteBtn({mealId}) {
   const clickHanlder = async (event)=>{
@@ -21,7 +21,7 @@ export function MealDeleteBtn({mealId}) {
     if(result?.error){
       return toast.error(result?.error);
     }
-    return toast.warn("Please Wait! Meal Post Removing...!");
+    return toast.success("Removing meal post....");
   }
 
   return (

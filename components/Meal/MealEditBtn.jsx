@@ -15,8 +15,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "../ui/textarea";
 import { Label } from "@/components/ui/label"
 import { updateMealAction } from "@/lib/actions";
-import { toast } from "react-toastify";
 import { MealUpdateBtn } from "./MealUpdateBtn";
+import toast from "react-hot-toast";
 
 export function MealEditBtn({meal}) {
   const [formState, formAction] = useFormState(updateMealAction, null);
@@ -34,7 +34,7 @@ export function MealEditBtn({meal}) {
         <DialogHeader>
           <DialogTitle>Edit Meal Receipe</DialogTitle>
           <DialogDescription>
-           Make changes to your receipe here. Click save when you're done.
+           Make changes to your receipe here. Click save when you &#39; re done.
           </DialogDescription>
         </DialogHeader>
         <form action={formAction}>

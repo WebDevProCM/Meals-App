@@ -23,9 +23,9 @@ export default async function MealReceipe({params}){
 
     return(
         <main className="max-w-[1400px] py-[60px] px-[20px] mx-auto">
-            {/* <div className="my-[20px] sm:mx-[20px] mr-auto">
+            <div className="my-[20px] sm:mx-[20px] mr-auto">
                 <BackBtn />
-            </div> */}
+            </div>
 
             <div 
             className="flex justify-center items-start gap-[20px] flex-wrap 

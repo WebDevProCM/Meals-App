@@ -25,14 +25,14 @@ export default function ShareMeal(){
             <input 
             className="block w-full rounded-md bg-gray-800 text-white px-2 py-1 text-lg font-medium"
             type="text" id="title" name="title" required />
-            {formState?.errors?.title && <p className="text-red-500">{formState.errors.title}</p>}
+            {formState?.errors?.title && <p className="text-red-500">{formState?.errors?.title}</p>}
             </div>
             <div className="w-full mb-[25px]">
             <label className="block mb-1 text-base font-bold text-gray-400 uppercase" htmlFor="summary">Short Summary</label>
             <input
              className="block w-full rounded-md bg-gray-800 text-white px-2 py-1 text-lg font-medium"
              type="text" id="summary" name="summary" required />
-             {formState?.errors?.summary && <p className="text-red-500">{formState.errors.summary}</p>}
+             {formState?.errors?.summary && <p className="text-red-500">{formState?.errors?.summary}</p>}
             </div>
             <div className="w-full mb-[25px]">
             <label className="block mb-1 text-base font-bold text-gray-400 uppercase" htmlFor="instructions">Instructions</label>
@@ -43,18 +43,18 @@ export default function ShareMeal(){
                 rows="10"
                 required
             />
-            {formState?.errors?.instructions && <p className="text-red-500">{formState.errors.instructions}</p>}
+            {formState?.errors?.instructions && <p className="text-red-500">{formState?.errors?.instructions}</p>}
             </div>
             
             <div className="sm:px-[40px] px-3">
                 <MealImageShare />
-                {formState?.errors?.image && <p className="text-red-500">{formState.errors.image}</p>}
+                {formState?.errors?.image && <p className="text-red-500">{formState?.errors?.image}</p>}
             </div>
 
             <MealShareFormBtn />
 
             {formState?.errors && <p className="text-red-500">PLEASE RE-CHECK INPUT FIELDS!</p>}
-            {formState?.error && <p className="text-red-500">{formState.errors.image}</p>}
+            {formState?.error && <p className="text-red-500">{formState?.error}</p>}
 
         </form>
     </main>
