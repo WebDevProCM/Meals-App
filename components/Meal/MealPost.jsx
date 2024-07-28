@@ -11,7 +11,7 @@ import PostLikeBtn from './PostLikeBtn';
 function MealPost({meal, editBtn}) {
   const createdLocal = moment.utc(meal.createdAt).local();
   const createdDate = createdLocal.format("YYYY-MM-DD");
-  const createdTime = createdLocal.format("HH.mm");
+  const createdTime = createdLocal.format("HH.mm A");
   let {_id, title, summary, instructions, image, user, likes, liked} = meal;
   _id = typeof _id === 'string' ? _id : _id.toHexString();
   user._id = typeof user._id === 'string' ? user._id : user._id.toHexString();
@@ -31,8 +31,6 @@ function MealPost({meal, editBtn}) {
       image: user.image
     }
   }
-
-  console.log(objectMeal.liked);
 
   return (
     <div className='rounded-[15px] max-w-[400px] mx-auto text-[#ddd6cb] bg-grad

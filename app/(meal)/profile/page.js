@@ -1,44 +1,38 @@
-import Image from "next/image";
-import coverImg from "@/public/images/cover.png"
-import profileImg from "@/public/images/image1.jpg"
-import MealPost from "@/components/Meal/MealPost";
 import { getCurrentUserMeals } from "@/lib/actions";
-import { verifySession } from "@/lib/session";
-import { redirect } from "next/navigation";
+import { BiSolidShare } from "react-icons/bi";
+import AllMealPosts from "@/components/Meal/AllMealPosts";
+import { Suspense } from "react";
+import MealPostLoading from "@/components/LoadingSkeletons/MealPostLoading";
+import ProfileSection from "@/components/User/ProfileSection";
+import ProfileSectionLoading from "@/components/LoadingSkeletons/ProfileSectionLoading";
+import CoverImageAnimation from "@/components/User/CoverImageAnimation";
+
 
 export default async function ProfilePage(){
-    const session = await verifySession();
-    if(!session){
-        redirect("/");
-    }
-    const meals = await getCurrentUserMeals();
+
     return(
-        <main className="max-w-[1500px] mx-auto px-[20px]">
+        <main className="max-w-[1500px] mx-auto px-[20px] py-8">
             <div className="mx-auto text-center">
-                <div className="max-w-[851px] sm:h-[300px] h-[200px] object-cover relative mx-auto">
-                    <Image src={coverImg} alt="cover-image" fill/>
-                </div>
-                <div className="flex justify-center items-center max-w-[800px] mx-auto sm:mt-[-50px] mt-[-30px] gap-5">
-                    <div className="sm:text-[20px] text-[15px] font-bold text-white">
-                        <h1>John Smith</h1>
-                    </div>
-                    <div className="sm:w-[150px] sm:h-[150px] w-[100px] h-[100px] relative">
-                        <Image className="rounded-full" src={profileImg} alt="profile-image" fill />
-                    </div>
-                    {/* <div className="flex flex-col justify-center items-start mt-[25px] text-white sm:text-[12px] text-[10px] font-bold">
-                        <Link href="">www.youtube.com</Link>
-                        <Link href="">www.youtube.com</Link>
-                        <Link href="">www.youtube.com</Link>
-                    </div> */}
-                </div>
+                <CoverImageAnimation />
+                {/* <div className="max-w-[1500px] relative mx-auto bg-[url('/images/burger-cover.jpg')]">
+                    <Image className="mx-auto z-20 relative" src={coverImg} alt="cover-image" width={851} height={300}/>
+                    <div className="absolute inset-0 bg-black opacity-20 z-30"></div>
+                    <div className="absolute inset-0 bg-black opacity-80 "></div>
+                </div> */}
+                <Suspense fallback={<ProfileSectionLoading />}>
+                <ProfileSection />
+                </Suspense>
             </div>
 
             <div className="mt-[100px]">
                 <h1 className="sm:text-[30px] text-[25px] text-white font-bold">
-                    Receipes Shared By You
+                    Recipes Shared By You <BiSolidShare className="inline-block"/>
                 </h1>
-
-                <div className="flex justify-start items-center flex-wrap">
+                
+                <Suspense fallback={<MealPostLoading />}>
+                <AllMealPosts getMeals={getCurrentUserMeals} edit={true}/>
+                </Suspense>
+                {/* <div className="flex justify-start items-center flex-wrap">
                     {meals.length === 0?
                     <p className="mx-auto text-gray-200 font-bold text-[30px] mt-5">No Meals Posts shared by you</p>
                     :
@@ -47,7 +41,7 @@ export default async function ProfilePage(){
                             <MealPost key={meal._id} meal={meal} editBtn={true}/>
                         )
                     })}
-                </div>
+                </div> */}
             </div>
 
         </main>

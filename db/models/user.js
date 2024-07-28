@@ -34,16 +34,6 @@ const userSchema = mongoose.Schema({
     }
 });
 
-userSchema.pre("save", async function (next){
-    let user = this;
-
-    if(user.isModified("password")){
-        user.password = await bcrypt.hash(user.password, 8);
-    }
-
-    next();
-})
-
 userSchema.statics.sendPublicData = (user) =>{
     return {
         _id: user._id,

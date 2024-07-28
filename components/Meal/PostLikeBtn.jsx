@@ -11,7 +11,6 @@ function PostLikeBtn({meal}) {
     let newMealUpdate = {...prevState};
     updateMeal.liked? newMealUpdate.likes.pop() : newMealUpdate.likes.push(1);
     newMealUpdate.liked = !newMealUpdate.liked;
-    console.log(newMealUpdate);
     return newMealUpdate;
   })
 
