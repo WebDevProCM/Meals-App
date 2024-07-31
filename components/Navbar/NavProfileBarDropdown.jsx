@@ -13,26 +13,36 @@ import { CgProfile } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
 import { RiCompassDiscoverLine } from "react-icons/ri";
 import { FaRegShareFromSquare } from "react-icons/fa6";
-  
+import { CiLogin } from "react-icons/ci";
+import { verifySession } from "@/lib/dal";
+   
 
-function NavProfileBarDropdown({children}) {
+async function NavProfileBarDropdown({children}) {
+  const session = await verifySession()
   return (
     <DropdownMenu>
         <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
         <DropdownMenuContent>
-        <DropdownMenuLabel><GiHotMeal size={20}/></DropdownMenuLabel>
+        <DropdownMenuLabel>
+          <GiHotMeal className="inline-block" size={20}/>
+          <p className="font-bold text-1xl">RECIPES SHARING APP</p>
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <Link href="/profile"><DropdownMenuItem><CgProfile size={18} className="inline-block"/>&nbsp;Profile</DropdownMenuItem></Link>
+        <Link href="/profile"><DropdownMenuItem className="cursor-pointer"><CgProfile size={18} className="inline-block"/>&nbsp;Profile</DropdownMenuItem></Link>
         <Link href="/meal" className="sm:hidden block">
-          <DropdownMenuItem><RiCompassDiscoverLine size={18} className="inline-block"/>&nbsp;Discover Recipies</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer"><RiCompassDiscoverLine size={18} className="inline-block"/>&nbsp;Discover Recipies</DropdownMenuItem>
         </Link>
         <Link href="/shareMeal" className="sm:hidden block">
-          <DropdownMenuItem><FaRegShareFromSquare size={18} className="inline-block"/>&nbsp;Share Recipe</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer"><FaRegShareFromSquare size={18} className="inline-block"/>&nbsp;Share Recipe</DropdownMenuItem>
         </Link>
-        <DropdownMenuItem>
-          <form action={logoutUser}>
-            <button><FiLogOut size={18} className="inline-block"/> Log Out</button>
-          </form>
+        <DropdownMenuItem className="cursor-pointer">
+          {session?
+            <form action={logoutUser}>
+              <button><FiLogOut size={18} className="inline-block"/> Log Out</button>
+            </form>
+              :
+            <Link href="/"><CiLogin className="inline-block" size={18}/>Log In</Link> 
+          }
           </DropdownMenuItem>
         </DropdownMenuContent>
     </DropdownMenu>

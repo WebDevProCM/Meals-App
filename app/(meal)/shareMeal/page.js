@@ -3,7 +3,13 @@
 import MealImageShare from "@/components/Meal/mealImageShare";
 import MealShareFormBtn from "@/components/Meal/MealShareFormBtn";
 import { shareMeal } from "@/lib/actions";
+import { FaRegShareFromSquare } from "react-icons/fa6";
 import {useFormState} from "react-dom";
+
+// export const metadata = {
+//     title: "Share your recipe",
+//     description: "Share your favourite and delicious meal recipe with others"
+// }
 
 export default function ShareMeal(){
     const [formState, formAction] = useFormState(shareMeal, {message: null});
@@ -11,11 +17,12 @@ export default function ShareMeal(){
     return(
     <main className="max-w-[1200px] mr-auto text-white p-[20px] py-[40px]">
         
-        <div className="text-[40px] text-white font-bold mb-[50px]">
+        <div className="flex sm:items-center items-start sm:text-[40px] text-[28px] leading-8 text-white font-bold mb-[50px]">
+            <FaRegShareFromSquare size={32} className="inline-block"/>
             <h1 
             className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent 
-            leading-10 ">
-                SHARE YOUR MEAL
+            leading-10 uppercase">
+                SHARE YOUR DELICIOUS FOOD RECIPE
             </h1>
         </div>
 

@@ -12,7 +12,7 @@ export default async function Home() {
       <div className="z-20 flex justify-center items-center">
         <h1 className="font-pacifico z-30 text-2xl font-bold text-gray-200 max-w-[300px]">
           <span className="text-[60px]">Welcome </span> 
-          To Food Receipies Sharing App!
+          To Food Recipes Sharing App!
         </h1>
 
         <GiFullPizza size={60}/>
@@ -25,10 +25,10 @@ export default async function Home() {
         before:duration-300 hover:text-white hover:shadow-black hover:before:-rotate-180 text-orange-500
         font-bold font-pacifico bg-glassHover"
         >
-        <span className="relative z-10">Discover Recipies</span>
+        <span className="relative z-10">Discover Recipes</span>
         </button>
         </Link>
-        <h5 className="font-bold font-fairplay">You can explore recipies without loggin!</h5>
+        <h5 className="font-bold font-fairplay">You can explore recipes without loggin!</h5>
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
     </div>

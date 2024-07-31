@@ -6,6 +6,11 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import LoginSignupFormbtn from "./loginSignupFormbtn"
@@ -34,6 +39,14 @@ function LoginForm() {
           <Label htmlFor="password">Password</Label>
           <Input type="password" id="password" name="password" placeholder="Type your password" required/>
           {formState?.errors?.password && <p className="text-red-500">{formState?.errors?.password}</p>}
+        </div>
+        <div className="space-y-1">
+        <HoverCard>
+          <HoverCardTrigger>Forgot password?</HoverCardTrigger>
+          <HoverCardContent>
+            Sorry...this feature under development...
+          </HoverCardContent>
+        </HoverCard>
         </div>
       </CardContent>
       <CardFooter>

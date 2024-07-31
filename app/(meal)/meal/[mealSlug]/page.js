@@ -1,10 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoReceipt } from "react-icons/io5";
-import mealImg from "@/public/images/curry.jpg";
+import mealImg from "@/public/images/burger.jpg";
 import BackBtn from "@/components/BackBtn";
 import { getMeal } from "@/lib/meal";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({params}){
+    const meal = await getMeal(params.mealSlug);
+    return {
+        title: meal.title,
+        description: meal.summary
+    }
+}
 
 export default async function MealReceipe({params}){
     let mealObject = await getMeal(params.mealSlug);
@@ -33,8 +41,9 @@ export default async function MealReceipe({params}){
             p-10 rounded-3xl drop-shadow-lg">
                 <div className="w-[450px] h-[300px] relative drop-shadow-">
                     <Image 
-                    className="rounded-lg" 
-                    src={mealImg} alt="Cooked Meal image" fill 
+                    className="rounded-lg object-cover" 
+                    src={mealImg} alt="Cooked Meal image" 
+                    fill 
                     />
                 </div>
                 <div className="flex flex-col text-white gap-[20px]">

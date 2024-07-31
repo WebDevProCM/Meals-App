@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import moment from 'moment';
 import { GiCook } from "react-icons/gi";
-import userImg from "@/public/images/image1.jpg"
+import userImg from "@/public/images/noProfileImg.png"
 import curry from "@/public/images/meal bg 2.jpg"
 import Link from 'next/link';
 import { MealEditBtn } from './mealEditBtn';
@@ -31,14 +31,14 @@ function MealPost({meal, editBtn}) {
       image: user.image
     }
   }
-
+  const postUserImage = objectMeal.user.image === "noImage.jpg"? userImg : objectMeal.user.image;
   return (
     <div className='rounded-[15px] max-w-[400px] mx-auto text-[#ddd6cb] bg-grad
       bg-gradient-to-r from-[#2c1e19] to-[#25200f] overflow-hidden my-[30px]'>
         <div className='flex justify-between items-start px-[20px] py-[10px] gap-[10px]'>
           <div className='flex justify-start items-start gap-[10px]'>
             <div className='relative w-[40px] h-[40px] rounded-full'>
-              <Image className='rounded-full' src={userImg} alt='user-picture' fill/>
+              <Image className='rounded-full' src={postUserImage} alt='user-picture' sizes='40px'fill/>
             </div>
             <div className='flex flex-col justify-center items-start'>
               <p className='uppercase font-montserrat font-bold'>{meal.user.name}</p>
@@ -58,11 +58,18 @@ function MealPost({meal, editBtn}) {
             <p>{meal.title}</p>
         </div>
         <div className='relative w-[350px] h-[400px]'>
-          <Image className='max-w-full' src={curry} alt='meal-image' fill/>
+          <Image 
+            className='max-w-full object-cover' 
+            src={objectMeal.image} 
+            alt='meal-image' 
+            sizes='350px'
+            fill/>
         </div>
 
         <div className='flex flex-col justify-center items-center'>
-          <button className='flex justify-center items-center text-center w-full py-[10px] border-b border-glassBorder hover:bg-glassHover'>
+          <button 
+          className='flex justify-center items-center text-center w-full py-[10px] border-b border-glassBorder hover:bg-glassHover'
+          >
             <GiCook />
             <Link href={`/meal/${meal.title}`}>
               View Receipe

@@ -1,15 +1,18 @@
 import Image from "next/image";
 import profileImg from "@/public/images/noProfileImg.png"
 import { verifySession } from "@/lib/dal";
-import { getUser } from "@/lib/user";
+import { getUserData } from "@/lib/actions";
 
 async function NavbarProfileImage() {
     const session = await verifySession();
-    const user = await getUser(session?.userId);
+    const userProfileImage = session ?  await getUserData() : null;
+    const profileImage = userProfileImage?.image || profileImg;
   return (
-    <>
-    <Image className="rounded-full" src={profileImg} alt="user-image" fill/>    
-    </>
+    <div
+    className="w-[60px] h-[60px] relative border-none hover:scale-105 transition ease-in-out duration-200"
+    >
+      <Image className="rounded-full" src={profileImage} alt="user-image" fill sizes="60px"/>    
+    </div>
   )
 }
 

@@ -58,7 +58,7 @@ export default function MealImageShare(){
              onClick={handlePickClick}
              >
         
-                <p className="relative z-10">Pick Image</p>
+                <p className="relative z-10">Upload an image</p>
             
             </button>
         </div>
