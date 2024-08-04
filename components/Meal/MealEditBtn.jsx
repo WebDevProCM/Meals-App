@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label"
 import { updateMealAction } from "@/lib/actions";
 import { MealUpdateBtn } from "./MealUpdateBtn";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 
 export function MealEditBtn({meal}) {
   const [formState, formAction] = useFormState(updateMealAction, null);
@@ -28,7 +29,12 @@ export function MealEditBtn({meal}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button><FaEdit /></button>
+        <motion.button
+        whileHover={{scale: 1.1}}
+        transition={{duration: 0.5, type: "spring"}}
+        >
+          <FaEdit />
+        </motion.button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

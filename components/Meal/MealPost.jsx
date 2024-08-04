@@ -2,7 +2,6 @@ import Image from 'next/image'
 import moment from 'moment';
 import { GiCook } from "react-icons/gi";
 import userImg from "@/public/images/noProfileImg.png"
-import curry from "@/public/images/meal bg 2.jpg"
 import Link from 'next/link';
 import { MealEditBtn } from './mealEditBtn';
 import { MealDeleteBtn } from './MealDeleteBtn';

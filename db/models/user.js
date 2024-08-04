@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
     },
     image: {
         type: String,
-        default: "noImage.jpg",
+        default: "/images/noProfileImg.png",
         trim: true
     }
 });

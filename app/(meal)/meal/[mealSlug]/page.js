@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoReceipt } from "react-icons/io5";
 import mealImg from "@/public/images/burger.jpg";
-import BackBtn from "@/components/BackBtn";
 import { getMeal } from "@/lib/meal";
 import { notFound } from "next/navigation";
 
@@ -42,7 +41,7 @@ export default async function MealReceipe({params}){
                 <div className="w-[450px] h-[300px] relative drop-shadow-">
                     <Image 
                     className="rounded-lg object-cover" 
-                    src={mealImg} alt="Cooked Meal image" 
+                    src={meal.image} alt="Cooked Meal image" 
                     fill 
                     />
                 </div>

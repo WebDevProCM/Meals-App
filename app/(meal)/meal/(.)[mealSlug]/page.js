@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoReceipt } from "react-icons/io5";
-import mealImg from "@/public/images/burger.jpg";
 import BackBtn from "@/components/BackBtn";
 import { getMeal } from "@/lib/meal";
 import { notFound } from "next/navigation";

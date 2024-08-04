@@ -5,14 +5,14 @@ import Image from "next/image";
 
 async function ProfileSection() {
     const user = await getUserData();
-    user._id = typeof user._id === "string" ? user._id : user._id.toHexString()
+    user._id = typeof user?._id === "string" ? user?._id : user?._id.toHexString()
     const userObject = {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        image: user.image
+        _id: user?._id,
+        name: user?.name,
+        email: user?.email,
+        image: user?.image
     }
-    const userImage = userObject.image === "noImage.jpg" ? profileImg : userObject.image;
+    const userImage = userObject?.image === "noImage.jpg" ? profileImg : userObject?.image;
   return (
     <div className="flex relative justify-center items-center max-w-[800px] mx-auto sm:mt-[-40px] mt-[-20px] gap-5 z-30">
         <div className="flex flex-col items-end justify-end sm:text-[40px] text-[30px] font-bold text-white">

@@ -14,6 +14,7 @@ import {
 import { removeMealAction } from "@/lib/actions";
 import toast from "react-hot-toast";
 import { MdDeleteForever } from "react-icons/md";
+import { motion } from "framer-motion";
   
 export function MealDeleteBtn({mealId}) {
   const clickHanlder = async (event)=>{
@@ -27,7 +28,13 @@ export function MealDeleteBtn({mealId}) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button variant="outline"><MdDeleteForever size={18} /></button>
+        <motion.button 
+        variant="outline"
+        whileHover={{scale: 1.1}}
+        transition={{duration: 0.5, type: "spring"}}
+        >
+          <MdDeleteForever size={18} />
+        </motion.button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

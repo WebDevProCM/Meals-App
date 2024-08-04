@@ -44,7 +44,7 @@ function SearchResults({mealTitles}) {
     >
         {mealTitles.length > 0 && 
             mealTitles.map((meal) =>{
-            if(meal.includes(textInput)){
+            if(meal.toLowerCase().includes(textInput.toLowerCase())){
                 results.push(meal);
                 return  <div key={meal} className="p-1 text-lg font-bold border-b-2 border-black">
                         <Link href={`/meal/${meal}`}><h1><GiHotMeal size={30}/>{meal}</h1></Link>

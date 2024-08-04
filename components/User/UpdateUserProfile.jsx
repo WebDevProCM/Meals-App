@@ -30,6 +30,7 @@ import ProfileUpdateSubmitBtn from "./ProfileUpdateSubmitBtn"
 import {useFormState} from "react-dom";
 import { updateUser } from "@/lib/actions"
 import toast from "react-hot-toast"
+import { motion } from "framer-motion"
 
 export function UpdateUserProfile({user}) {
   const [open, setOpen] = React.useState(false)
@@ -39,7 +40,12 @@ export function UpdateUserProfile({user}) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <button><FaUserEdit size={20}/></button>
+          <motion.button
+          whileHover={{scale: 1.1}}
+          transition={{duration: 0.5 ,type: "spring"}}
+          >
+            <FaUserEdit size={20}/>
+          </motion.button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
@@ -57,7 +63,12 @@ export function UpdateUserProfile({user}) {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <button><FaUserEdit size={20}/></button>
+        <motion.button
+          whileHover={{scale: 1.1}}
+          transition={{duration: 0.5 ,type: "spring"}}
+        >
+          <FaUserEdit size={20}/>
+        </motion.button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">

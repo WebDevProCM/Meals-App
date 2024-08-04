@@ -28,13 +28,13 @@ export default function MealImageShare(){
 
             <div 
             className="w-[200px] h-[200px] relative flex justify-center items-center border-2
-             border-gray-100 text-gray-300">
+             border-gray-100 text-gray-300 text-center">
                 
                 {mealImage &&
                     <Image src={mealImage} alt="Meal-Image" fill/>                
                 }
                 {!mealImage &&
-                    <p>No Image</p>
+                    <p>Upload portrait image</p>
                 }
 
             </div>
