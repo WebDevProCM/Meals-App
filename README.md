@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# __FOOD RECIPES SHARING APP__ - (Fullstack nextjs app)
+ Developed a __full-stack web application using Next.js__ for users to discover, share, and manage recipes. Implemented robust authentication (JWT), data management (Mongoose, DAL, DTO), and image handling (Cloudinary). Optimized performance with Next.js caching and enhanced user experience with smooth animations (Framer Motion).
+ ![Login](images/Home1.png)
+ ![Login](images/Recipes.png)
 
-## Getting Started
+ ## __DISCOVER RECIPES PAGE__
+ On this page, users can __explore, like/dislike, and view__ delicious recipes other users shared. I have used __React Optimistic__ to instantly update the UI when users like/dislike the post to provide a better user experience.
+ It uses the __nextjs cache data__ feature in the server and client to quickly load the page and show the recipe without giving a long loading time to the user.
+ ![Discover](images/Recipes1.png)
 
-First, run the development server:
+ ## __SHARE RECIPE__
+ The share recipe page, allows user to __share__ their favorite recipe with an attractive title, summary, instructions, and image of the recipe. Here I have used __ZOD to validate the form data.__. I have provided a better __UX experience by showing the loading status after submitting the form using nextjs useFormState, showing appropriate errors below each input field.__
+ ![Share](images/Share.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ## __PROFILE PAGE__
+ In the profile section, user can __update their profile and manage recipes__ shared by them. Here I have used nice cover photo transition animation using __react useState and framer motion.__ I have also used __ZOD__ to validate form data.
+ ![Profile](images/Profile.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ ## __AUTHENTICATION AND AUTHORIZATION__
+ I have used __JWT__ to implement robust authentication using __the JOSE library__ to __encrypt__ and __decrypt__ the __session__. I use __middleware__ to protect private routes and in addition to that, I have implemented __a Data access layer(DAL)__ in each server's actions to provide high security and __a Data transfer object(DTO)__ to return only the necessary data for authenticated users.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+ ## __OPTIMISATION__
+ for this, I used __nextjs image component__ for a better UX experience and rendered __metadata dynamically__ of each recipe page for __SEO optimization__. To serve fast data access to users I have used __the react cache feature and nextjs cache__ on constantly accessing __server actions__ to send __a single request__ to the server actions and __serve the same data (revalidate if the data changed!)__ without sending the same request to the database and other resources.
+ ![Recipe](images/Recipe.png)
+ ![Recipe](images/Recipe1.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+ ## __ERROR HANDLING__
+ To make the app stable I have used __try/catch__ block for server actions. To enable users to __recover from errors__, I have used __the react error boundary__ to show the user a friendly error message and provide a mechanism to recover from error (Which re-renders the component/action).
 
-## Learn More
+ ### Technologies Used: Javascript, React.js, Nextjs(app router), Node.js, MongoDB/Mongoose, JWT, Tailwind CSS, Shadcn UI, Framer motion
 
-To learn more about Next.js, take a look at the following resources:
+ #### Visit the link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+use this email and password for testing -\
+ **Email - test@gmail.com**\
+ **Password - test123!**
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ #### feel free to create a new account and test the user authentication.

@@ -34,7 +34,7 @@ export default function MealImageShare(){
                     <Image src={mealImage} alt="Meal-Image" fill/>                
                 }
                 {!mealImage &&
-                    <p>Upload portrait image</p>
+                    <p>Upload Meal Image</p>
                 }
 
             </div>

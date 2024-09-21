@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import {JSDOM} from "jsdom"
+import DOMPurify from "dompurify";
 import { IoReceipt } from "react-icons/io5";
 import mealImg from "@/public/images/burger.jpg";
 import { getMeal } from "@/lib/meal";
@@ -28,6 +30,9 @@ export default async function MealReceipe({params}){
 
     meal.instructions = meal.instructions.replace(/\n/g, "<br>");
 
+    const window = new JSDOM("").window;
+    const DOMPurifyServer = DOMPurify(window);
+
     return(
         <main className="max-w-[1400px] py-[60px] px-[20px] mx-auto">
             {/* <div className="my-[20px] sm:mx-[20px] mr-auto">
@@ -42,6 +47,7 @@ export default async function MealReceipe({params}){
                     <Image 
                     className="rounded-lg object-cover" 
                     src={meal.image} alt="Cooked Meal image" 
+                    sizes="450px"
                     fill 
                     />
                 </div>
@@ -69,7 +75,7 @@ export default async function MealReceipe({params}){
                 <p 
                 className="text-xl" 
                 dangerouslySetInnerHTML={{
-                    __html: meal.instructions
+                    __html: DOMPurifyServer.sanitize(meal.instructions)
                 }}
                 >
 

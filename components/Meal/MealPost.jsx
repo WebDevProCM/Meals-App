@@ -37,7 +37,7 @@ function MealPost({meal, editBtn}) {
         <div className='flex justify-between items-start px-[20px] py-[10px] gap-[10px]'>
           <div className='flex justify-start items-start gap-[10px]'>
             <div className='relative w-[40px] h-[40px] rounded-full'>
-              <Image className='rounded-full' src={postUserImage} alt='user-picture' sizes='40px'fill/>
+              <Image className='rounded-full' src={postUserImage} alt='user-picture' sizes='40px' fill/>
             </div>
             <div className='flex flex-col justify-center items-start'>
               <p className='uppercase font-montserrat font-bold'>{meal.user.name}</p>
