@@ -26,7 +26,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FaUserEdit } from "react-icons/fa";
-import ProfileUpdateSubmitBtn from "./ProfileUpdateSubmitBtn"
+import ProfileUpdateSubmitBtn from "@/components/User/ProfileUpdateSubmitBtn"
 import {useFormState} from "react-dom";
 import { updateUser } from "@/lib/actions"
 import toast from "react-hot-toast"

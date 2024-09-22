@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/dialog"
 import { FaEdit } from "react-icons/fa";
 import { Input } from "@/components/ui/input"
-import { Textarea } from "../ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label"
 import { updateMealAction } from "@/lib/actions";
-import { MealUpdateBtn } from "./MealUpdateBtn";
+import { MealUpdateBtn } from "@/components/Meal/MealUpdateBtn";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 

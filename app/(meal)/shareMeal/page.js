@@ -1,6 +1,6 @@
 "use client";
 
-import MealImageShare from "@/components/Meal/mealImageShare";
+import MealImageShare from "@/components/Meal/MealImageShare";
 import MealShareFormBtn from "@/components/Meal/MealShareFormBtn";
 import { shareMeal } from "@/lib/actions";
 import { FaRegShareFromSquare } from "react-icons/fa6";

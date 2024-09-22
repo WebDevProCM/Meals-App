@@ -3,9 +3,9 @@ import moment from 'moment';
 import { GiCook } from "react-icons/gi";
 import userImg from "@/public/images/noProfileImg.png"
 import Link from 'next/link';
-import { MealEditBtn } from './mealEditBtn';
-import { MealDeleteBtn } from './MealDeleteBtn';
-import PostLikeBtn from './PostLikeBtn';
+import { MealEditBtn } from '@/components/Meal/MealEditBtn';
+import { MealDeleteBtn } from '@/components/Meal/MealDeleteBtn';
+import PostLikeBtn from '@/components/Meal/PostLikeBtn';
 
 function MealPost({meal, editBtn}) {
   const createdLocal = moment.utc(meal.createdAt).local();

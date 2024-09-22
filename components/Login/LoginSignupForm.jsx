@@ -7,8 +7,8 @@ import {
 import {
   TabsContent,
 } from "@/components/ui/tabs"
-import LoginForm from "./LoginForm"
-import SignupForm from "./SignupForm"
+import LoginForm from "@/components/Login/LoginForm"
+import SignupForm from "@/components/Login/SignupForm"
 
 function LoginSignupForm() {
 

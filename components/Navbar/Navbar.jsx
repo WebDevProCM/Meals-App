@@ -1,11 +1,11 @@
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
-import NavProfileBarDropdown from "./NavProfileBarDropdown";
-import NavbarProfileImage from "./NavbarProfileImage";
+import NavProfileBarDropdown from "@/components/Navbar/NavProfileBarDropdown";
+import NavbarProfileImage from "@/components/Navbar/NavbarProfileImage";
 import { Suspense } from "react";
-import NavbarProfileImageLoading from "../LoadingSkeletons/NavbarProfileImageLoading";
-import Searchbar from "./Searchbar";
-import SearchBarLoading from "../LoadingSkeletons/SearchBarLoading";
+import NavbarProfileImageLoading from "@/components/LoadingSkeletons/NavbarProfileImageLoading";
+import Searchbar from "@/components/Navbar/Searchbar";
+import SearchBarLoading from "@/components/LoadingSkeletons/SearchBarLoading";
 
 export default async function Navbar() {
   return (

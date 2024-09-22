@@ -1,5 +1,5 @@
 import { getAllMeals } from "@/lib/actions";
-import SearchResults from "./SearchResults";
+import SearchResults from "@/components/Navbar/SearchResults";
 
 async function Searchbar() {
     const meals = await getAllMeals();

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/hover-card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import LoginSignupFormbtn from "./loginSignupFormbtn"
+import LoginSignupFormbtn from "@/components/Login/LoginSignupFormbtn"
 import {useFormState} from "react-dom";
 import { loginUser } from "@/lib/auth"
 
