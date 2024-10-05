@@ -1,10 +1,11 @@
-import { CgSearchLoading } from "react-icons/cg";
+import MealPostLoading from "@/components/LoadingSkeletons/MealPostLoading"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function LoadingPage(){
     return(
-        <main className="max-w-[1400px] h-screen flex justify-center items-center mx-auto">
-            <CgSearchLoading size={50}/>
-            <h1 className="sm:text-5xl text-4xl text-gray-100 font-bold uppercase">Loading Recipe...</h1>
+        <main className="py-[80px] px-[20px] mx-auto relative h-full">
+            <Skeleton className="h-6 w-[200px]" />
+            <MealPostLoading />
         </main>
     )
 }

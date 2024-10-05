@@ -4,6 +4,7 @@ import { RiCompassDiscoverLine } from "react-icons/ri";
 import { getAllMeals } from "@/lib/actions";
 import { Suspense } from "react";
 
+
 export const metadata = {
   title: "Discover Recipes",
   description: "Discover Delicious and most liked recipes shared by others"
@@ -21,7 +22,6 @@ export default async function MealPage(){
         <AllMealPosts getMeals={getAllMeals} edit={false}/>
         </Suspense>
         <div className="absolute inset-0 bg-black opacity-90 "></div>
-  
       </main>
     )
 }

@@ -72,6 +72,7 @@ export default async function MealReceipe({params}){
             <div className="mt-[100px] max-w-[800px] mx-auto text-black">
                 <IoReceipt size={40}/>
             </div>
+
             <div className="bg-[#6e6464] max-w-[800px] mx-auto mb-[40px] p-11 rounded-lg drop-shadow-xl">
                 <p 
                 className="text-xl" 
