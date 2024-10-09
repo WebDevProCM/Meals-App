@@ -29,8 +29,7 @@
 
  ### Technologies Used: Javascript, React.js, Nextjs(app router), Node.js, MongoDB/Mongoose, JWT, Tailwind CSS, Shadcn UI, Framer motion
 
- #### Visit the link
-
+ #### Visit the link - https://nextgenrecipes.netlify.app
 
 use this email and password for testing -\
  **Email - test@gmail.com**\
