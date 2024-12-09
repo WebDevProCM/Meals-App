@@ -7,11 +7,11 @@ export default async function Home() {
   return (
     <main className="flex sm:flex-row sm:flex-wrap flex-col justify-center items-center h-screen">
     
-    <div className="sm:basis-1/2 sm:min-w-[500px] sm:h-full flex flex-col gap-10 flex-grow w-full h-2/6 relative 
+    <div className="sm:basis-1/2 sm:min-w-[500px] sm:h-full flex flex-col sm:gap-10 gap-5 flex-grow w-full h-2/6 relative 
     bg-left-banner bg-cover bg-no-repeat justify-center items-center p-5">
       <div className="z-20 flex justify-center items-center">
         <h1 className="font-pacifico z-30 text-2xl font-bold text-gray-200 max-w-[300px]">
-          <span className="text-[60px]">Welcome </span> 
+          <span className="text-6xl">Welcome </span> 
           To Food Recipes Sharing App!
         </h1>
 
