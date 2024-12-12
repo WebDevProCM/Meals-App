@@ -5,10 +5,10 @@ import LoginSignupForm from "@/components/Login/LoginSignupForm";
 export default async function Home() {
 
   return (
-    <main className="flex sm:flex-row sm:flex-wrap flex-col justify-center items-center h-screen">
+    <main className="flex sm:flex-row sm:flex-wrap flex-col justify-center items-center h-screen w-screen overflow-x-hidden">
     
-    <div className="sm:basis-1/2 sm:min-w-[500px] sm:h-full flex flex-col sm:gap-10 gap-5 flex-grow w-full h-2/6 relative 
-    bg-left-banner bg-cover bg-no-repeat justify-center items-center p-5">
+    <div className="relative flex flex-col justify-center items-center flex-grow sm:flex-[50%] h-full sm:gap-10 gap-5 w-screen 
+      bg-left-banner bg-cover bg-no-repeat bg-center p-5">
       <div className="z-20 flex justify-center items-center">
         <h1 className="font-pacifico z-30 text-2xl font-bold text-gray-200 max-w-[300px]">
           <span className="text-6xl">Welcome </span> 
@@ -33,7 +33,7 @@ export default async function Home() {
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
     </div>
   
-    <div className="relative flex sm:basis-1/2 sm:min-w-[500px] flex-grow w-full h-screen justify-center items-center bg-right-banner bg-cover bg-no-repeat">
+    <div className="relative flex justify-center items-center sm:flex-[50%] flex-grow w-screen h-full bg-right-banner bg-cover bg-no-repeat bg-center p-4">
       <LoginSignupForm />
       <div className="absolute inset-0 bg-black opacity-50 backdrop-blur-lg"></div>
     </div>
