@@ -38,9 +38,9 @@ export function MealEditBtn({meal}) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit Meal Receipe</DialogTitle>
+          <DialogTitle>Edit Recipe Post</DialogTitle>
           <DialogDescription>
-           Make changes to your receipe here. Click save when you &#39; re done.
+           Make changes to your post here. Click save when you &#39; re done.
           </DialogDescription>
         </DialogHeader>
         <form action={formAction}>

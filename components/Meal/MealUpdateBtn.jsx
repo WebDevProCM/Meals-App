@@ -10,7 +10,7 @@ export function MealUpdateBtn() {
     {pending ? 
       <Button disabled>
         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        Please wait
+        Please wait...
       </Button>
       :
       <Button type="submit">

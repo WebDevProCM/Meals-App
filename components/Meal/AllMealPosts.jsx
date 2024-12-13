@@ -16,7 +16,7 @@ async function AllMealPosts({getMeals, edit}) {
             )
           })
           :
-          <p className="text-center font-bold text-[40px] text-gray-200 h-screen">No Meals Posts</p>
+          <p className="text-center font-bold text-[40px] text-gray-200 h-screen">No Recipe Posts</p>
         }
     </div>
   )

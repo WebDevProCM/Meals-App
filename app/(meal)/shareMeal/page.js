@@ -17,11 +17,11 @@ export default function ShareMeal(){
     return(
     <main className="max-w-[1200px] mr-auto text-white p-[20px] py-[40px]">
         
-        <div className="flex sm:items-center items-start sm:text-[40px] text-[28px] leading-8 text-white font-bold mb-[50px]">
-            <FaRegShareFromSquare size={32} className="inline-block"/>
+        <div className="flex md:items-center items-start gap-2 text-white font-bold mb-[50px]">
+            <FaRegShareFromSquare size={35} className="inline-block"/>
             <h1 
             className="bg-gradient-to-r from-orange-500 to-orange-800 bg-clip-text text-transparent 
-            leading-10 uppercase">
+            sm:leading-10 leading-7 uppercase sm:text-[40px] text-2xl">
                 SHARE YOUR DELICIOUS FOOD RECIPE
             </h1>
         </div>

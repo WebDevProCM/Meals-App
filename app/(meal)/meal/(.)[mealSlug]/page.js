@@ -54,23 +54,23 @@ export default async function MealReceipe({params}){
                 </div>
                 <div className="flex flex-col text-white gap-[20px]">
                     <p 
-                    className="font-bold text-[40px] uppercase max-w-[400px] leading-[45px]"
+                    className="font-bold text-[40px] uppercase max-w-[400px] leading-[45px] text-left"
                     >
                         {meal.title}
                     </p>
-                    <p className="text-[25px] font-bold text-gray-400 max-w-[500px] font-montserrat">
+                    <p className="text-[25px] font-bold text-gray-400 max-w-[500px] font-montserrat text-left">
                         {meal.summary}
                     </p>
                     <Link href=""> 
-                        <p className="text-orange-500 font-bold underline font-pacifico">
-                            Share by {meal.user.name}
+                        <p className="text-orange-500 font-bold underline font-pacifico text-left">
+                            Shared by {meal.user.name}
                         </p> 
                     </Link>
                 </div>
             </div>
 
             <div className="mt-[100px] max-w-[800px] mx-auto text-black">
-                <IoReceipt size={40}/>
+                <IoReceipt size={50}/>
             </div>
 
             <div className="bg-[#6e6464] max-w-[800px] mx-auto mb-[40px] p-11 rounded-lg drop-shadow-xl">

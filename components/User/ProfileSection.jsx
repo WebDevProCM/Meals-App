@@ -21,7 +21,7 @@ async function ProfileSection() {
         </div>
         <div className="sm:w-[150px] sm:h-[150px] w-[100px] h-[100px] relative">
             <Image 
-            className="rounded-full border-[7px] border-orange-400" 
+            className="rounded-full border-4 border-orange-400" 
             src={userImage} 
             alt="profile-image" 
             sizes="(max-width: 750px) 100px, 150px"

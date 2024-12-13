@@ -22,7 +22,7 @@ export function MealDeleteBtn({mealId}) {
     if(result?.error){
       return toast.error(result?.error);
     }
-    return toast.success("Removing meal post....");
+    return toast.success("Removing recipe post....");
   }
 
   return (
@@ -41,7 +41,7 @@ export function MealDeleteBtn({mealId}) {
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. This will permanently delete your
-            Meal Post.
+            recipe post.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

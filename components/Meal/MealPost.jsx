@@ -71,7 +71,7 @@ function MealPost({meal, editBtn}) {
           >
             <GiCook />
             <Link href={`/meal/${meal.title}`}>
-              View Receipe
+              View Recipe
             </Link>
           </button>
 
