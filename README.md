@@ -1,38 +1,69 @@
-# __FOOD RECIPES SHARING APP__ - (Fullstack nextjs app)
- Developed a __full-stack web application using Next.js__ for users to discover, share, and manage recipes. Implemented robust authentication (JWT), data management (Mongoose, DAL, DTO), and image handling (Cloudinary). Optimized performance with Next.js caching and enhanced user experience with smooth animations (Framer Motion).
+# 🍽️ __Food Recipes Sharing App__ - (Fullstack nextjs app)
+ __A full-stack web application built with Next.js__ where users can discover, share, and manage their favorite recipes. It features modern authentication, smooth UI interactions, and powerful performance optimizations, as well as image handling (Cloudinary).
+
+# ✨ Technologies
+- Next.js 14 (App Router)
+- React.js
+- JavaScript
+- Node.js
+- MongoDB & Mongoose
+- JWT (JOSE)
+- Tailwind CSS & Shadcn UI
+- Zod (Validation)
+- Framer Motion
+
+# 🚀 Key Features
+
+## 🔎 Discover Recipes
+Explore delicious recipes shared by others.
+- Like/dislike instantly using React Optimistic UI
+- Next.js caching ensures fast page loads
+- Smooth animations with Framer Motion
+![Login](images/Recipes.png)
+![Recipe](images/Recipe.png)
+![Recipe](images/Recipe1.png)
+
+## 📝 Share Recipes
+Users can contribute by sharing their own recipes.
+- Add title, summary, instructions, and image
+- Form validation with Zod
+- Real-time UX feedback with useFormState
+- Inline error messages for a clean form experience
+![Share](images/Share.png)
+
+# 👤 Profile Page
+Manage your own profile and recipes.
+- Update profile info with real-time form validation
+- See and manage your shared recipes
+- Dynamic animations using Framer Motion + React state
+![Profile](images/Profile.png)
+
+# 🔐 Authentication & Authorization
+Robust authentication using JWT + JOSE
+- Secure login/signup
+- Protected routes via Next.js Middleware
+- DAL (Data Access Layer) and DTO (Data Transfer Object) for cleaner, safer data handling
+
+# ⚙️ Optimization
+- Next.js Image Component for better image performance
+- Dynamic metadata rendering for SEO
+- Efficient data fetching using Next.js Cache + React Cache
+- Avoids redundant DB calls
+- Revalidates only if data changes
+
  ![Login](images/Home1.png)
- ![Login](images/Recipes.png)
 
- ## __DISCOVER RECIPES PAGE__
- On this page, users can __explore, like/dislike, and view__ delicious recipes other users shared. I have used __React Optimistic__ to instantly update the UI when users like/dislike the post to provide a better user experience.
- It uses the __nextjs cache data__ feature in the server and client to quickly load the page and show the recipe without giving a long loading time to the user.
- ![Discover](images/Recipes1.png)
+# 🛠️ Error Handling
+- Backend wrapped with try/catch for reliability
+- React Error Boundaries provide user-friendly error messages and allow recovery without page refresh
 
- ## __SHARE RECIPE__
- The share recipe page, allows user to __share__ their favorite recipe with an attractive title, summary, instructions, and image of the recipe. Here I have used __ZOD to validate the form data.__. I have provided a better __UX experience by showing the loading status after submitting the form using nextjs useFormState, showing appropriate errors below each input field.__
- ![Share](images/Share.png)
+# 🌐 Live Demo
+- 🔗 Visit the App - https://nextgenrecipes.netlify.app
 
- ## __PROFILE PAGE__
- In the profile section, user can __update their profile and manage recipes__ shared by them. Here I have used nice cover photo transition animation using __react useState and framer motion.__ I have also used __ZOD__ to validate form data.
- ![Profile](images/Profile.png)
-
- ## __AUTHENTICATION AND AUTHORIZATION__
- I have used __JWT__ to implement robust authentication using __the JOSE library__ to __encrypt__ and __decrypt__ the __session__. I use __middleware__ to protect private routes and in addition to that, I have implemented __a Data access layer(DAL)__ in each server's actions to provide high security and __a Data transfer object(DTO)__ to return only the necessary data for authenticated users.
-
- ## __OPTIMISATION__
- for this, I used __nextjs image component__ for a better UX experience and rendered __metadata dynamically__ of each recipe page for __SEO optimization__. To serve fast data access to users I have used __the react cache feature and nextjs cache__ on constantly accessing __server actions__ to send __a single request__ to the server actions and __serve the same data (revalidate if the data changed!)__ without sending the same request to the database and other resources.
- ![Recipe](images/Recipe.png)
- ![Recipe](images/Recipe1.png)
-
- ## __ERROR HANDLING__
- To make the app stable I have used __try/catch__ block for server actions. To enable users to __recover from errors__, I have used __the react error boundary__ to show the user a friendly error message and provide a mechanism to recover from error (Which re-renders the component/action).
-
- ### Technologies Used: Javascript, React.js, Nextjs(app router), Node.js, MongoDB/Mongoose, JWT, Tailwind CSS, Shadcn UI, Framer motion
-
- #### Visit the link - https://nextgenrecipes.netlify.app
-
-use this email and password for testing -\
+## 🧪 Use the following credentials to test:
  **Email - test@gmail.com**\
- **Password - test123!**
+ **Password - test123!**\
+Or feel free to create your own account and test the full authentication flow!
 
- #### feel free to create a new account and test the user authentication.
+## 🎯 Final Note
+This project is a complete full-stack application built to deliver a seamless recipe-sharing experience. From powerful server-side rendering to smooth UI animations, it reflects modern web development best practices and offers a solid user journey from start to finish.
